@@ -7,11 +7,18 @@ $bg-colour: #FEFEFE;
 body {
     font-size: 14px;
    /* color: #000011; */
-    color: #777;
+   color: #777; 
     /*    color: #555;*/
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 400;
-    background: rgb(254,254,254);
+ /* background: rgb(254,254,254);  
+      background-image: url("clouds.jpg"); */
+   background: url("clouds.jpg");
+
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    /* background: #e6dcd0; */
     padding-top: 80px;
     padding-bottom: 60px;
     letter-spacing: 0.005em;
@@ -102,6 +109,21 @@ body {
 
 .btn-wide {
     width: 100%;
+}
+/*
+navbar > .container-fluid{
+   background-color: rgb(66, 32, 7)
+} */
+
+.navbar-default{
+    background-color: #243172;
+    > .navbar-brand{
+    color: white;
+    }
+}
+
+.navbar-default .navbar-brand{
+    color: white;
 }
 
 #main-nav {
