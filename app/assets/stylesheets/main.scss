@@ -18,22 +18,24 @@ $light-purple: #b78cba;
 
 .moodsDiv{
     clear:both;
-    height: 100px;
     text-align:center;
 }
-
+/*
 .moodsNumeric, .moodsVisualization{
     margin-left:40px;
     margin-top: 15px;
 }
-
+*/
+/*
 .moodsNumeric, .moodsVisualization, .moodsSectionTitle{
     display: inline-block;
     float:left;
 }
+
 .moodsVisualization, .moodsSectionTitle{
     float:left;
 }
+*/
 
 .radioButton{
     padding-right: 10px;
@@ -100,6 +102,8 @@ $light-purple: #b78cba;
                 margin: auto;
                 border: 1px solid transparent;
                 border-radius: 100px;
+                height: 150px;
+                width: 150px;
             }
         }
     }
