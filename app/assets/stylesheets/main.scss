@@ -17,9 +17,16 @@ $light-purple: #b78cba;
 }
 
 .moodsDiv{
-    clear:both;
-    text-align:center;
+    clear: both;
+    .moodsVisualization {
+        text-align:center;
+        img {
+            margin: 5px;
+        }
+    }
 }
+
+
 /*
 .moodsNumeric, .moodsVisualization{
     margin-left:40px;
@@ -101,7 +108,7 @@ $light-purple: #b78cba;
             img {
                 margin: auto;
                 border: 1px solid transparent;
-                border-radius: 100px;
+                border-radius: 150px;
                 height: 150px;
                 width: 150px;
             }
@@ -113,6 +120,13 @@ $light-purple: #b78cba;
 .cardTitle{
     font-size: 20px;
     color: $darker-blue; /* #337ab7; */
+}
+
+.profile .card-image img{
+    height: 250px;
+    width: 250px;
+    border: 1px solid transparent;
+    border-radius: 250px;
 }
 
 .subhead{

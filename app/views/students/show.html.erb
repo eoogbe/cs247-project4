@@ -1,11 +1,11 @@
 <%= render "shared/main_nav", back_path: students_path, title: "Participant Profile" %>
 
 <main class="container" role="main">
-  <section class="media well card">
+  <section class="media well card profile">
     <div class="media-left card-image">
       <%= image_tag student.image, class: "media-object" %>
     </div>
-    <div class="media-right">
+    <div class="media-right align-vert-center">
       <div class="media-body align-left">
         <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
         <p>Age <%= student.age %></p>
@@ -14,19 +14,17 @@
          <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
         </div>
       </div>
-      <div class="media-right">
+      <div class="media-right center">
         <!-- <h2 class="media-heading"><span class="cardTitle">Mood Summary</span></h2> -->
         <div class="moodsDiv">
           <% if student.notes.has_emotion_moods? %>
             <div class="moodsVisualization">
               <% Note.emotion_moods.each do |mood| %>
-                <!-- <div class="mood-face col-md-6 col-sm-6 col-xs-6"> -->
+                <% if student.notes.send("#{mood}_mood_count") != 0 %>
                   <%= mood_percent_image(mood, student.notes) %>
-                <!-- </div> -->
-                <!-- div class="mood-count col-md-6 col-sm-6 col-xs-6">
-                  <%= student.notes.send("#{mood}_mood_count") %>
-                </div> -->
+                  <%#= student.notes.send("#{mood}_mood_count") %>
                 <br />
+                <% end %>
               <% end %>
             </div>
             <!-- <div class="moodsNumeric">
@@ -36,7 +34,7 @@
               <% end %>
             </div> -->
           <% else %>
-            <p>No moods recorded</p>
+            <!-- <p>No moods recorded</p> -->
           <% end %>
         </div>
       </div>
