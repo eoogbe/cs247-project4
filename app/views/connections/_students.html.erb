@@ -11,7 +11,7 @@
     </div>
   </section> -->
   <!-- <hr> -->
-    <h2 class="center">Home</h1>
+    <h2 class="center"><%= page_title %></h1>
   <hr>
 
   <div>
@@ -19,7 +19,7 @@
       <% students.each do |student| %>
       <li>
         <section class="media well card mainCard">
-          <div class="media-left">
+          <div class="media-left card-image">
             <% if show_link %>
               <%= link_to student do %>
                 <%= image_tag student.image, height: 90, class: "media-object" %>

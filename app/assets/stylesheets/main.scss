@@ -3,25 +3,7 @@ $bg-colour: #FEFEFE;
 $nav-bg-colour: #84d4fa;
 $nav-colour: #3e9ad2;
 
-html {
-    height: 100%;
-}
-
-body {
-    font-size: 14px;
-    color: #777; 
-    font-family: 'Open Sans', Arial, sans-serif;
-    font-weight: 400;
-    background: url("bg_warm.jpg");
-
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-    padding-top: 80px;
-    padding-bottom: 60px;
-    letter-spacing: 0.005em;
-}
-
+//main.scss
 .textEntry{
     width: 100%;
 }
@@ -88,12 +70,17 @@ body {
     background: white;
     position: relative;
     word-break: break-word;
- /*   margin-bottom: 10px; 
-    margin: 10px 15px; */
-    > .card-image {
-        padding:20px;
-        > img {
-            background: url("pic_bg.png");
+
+    .card-image {
+        padding: 20px;
+        margin: 5px;
+        background: url("pic_bg.png");
+        background-size: 100% 100%;
+        img {
+            border: transparent 1px solid;
+            border-radius: 100px;
+            height: 100px;
+            width: 100px;
         }
     }
     
@@ -118,13 +105,13 @@ body {
 
 navbar > .container-fluid{
    background-color: $nav-bg-colour;
-
 } 
 
 .navbar-default{
     background-color: $nav-bg-colour;
     > .navbar-brand{
-    color: white;
+        color: white;
+        text-shadow: 2px 2px #000000;
     }
 }
 
@@ -136,6 +123,7 @@ navbar > .container-fluid{
     background-color: #86A3C5;
     padding: 5px 0;
     margin: 10px 0;
+    color: white;
     > h1 {
         margin: 0;
         text-transform: uppercase;
@@ -196,7 +184,7 @@ fieldset {
     color: #777777;
    /* text-decoration: underline; */
     &:hover {
-    /*    color: #555; */
+    /*  color: #555; */
         color: #000011;
         text-decoration: none;
 
