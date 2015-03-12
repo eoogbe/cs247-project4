@@ -1,18 +1,24 @@
 <%= render "shared/main_nav" %>
 
 <main class="container" role="main">
-  <section class="media well card mainCard">
-    <div class="media-left">
-      <%= link_to student do %>
-        <%= image_tag student.image, height: 90, class: "media-object" %>
-      <% end %>
-    </div>
-    <div class="media-body">
-      <h2 class="media-heading"><span class="cardTitle"><%= link_to student.full_name, student %></span></h2>
-      <p>Age <%= student.age %></p>
-      <p>Joined program: <%= student.joined_at.strftime("%B %Y") %></p>
+  <!-- Student Specific Data -->
+  <section class="media well card">
+    <div class="card-image">
+      <%= image_tag student.image, height: "50%", class: "media-object" %>
     </div>
   </section>
+  <section class="media">
+    <div class="media-body">
+      <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
+      <p>Age <%= student.age %></p>
+      <p>Joined program: <%= student.joined_at.strftime("%B %Y") %></p>
+      <div class="btn btn-default">
+       <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Note Form -->
   <%= form_for [student, note] do |f| %>
     <% if note.errors.any? %>
       <div class="error-notification">
@@ -92,7 +98,7 @@
       <%= f.label :text, "Additional Information/Explanation" , id: "expText" %>
       </legend>
       <!-- <div class="well card"> -->
-      <%= f.text_area :text, class: "well card textEntry", rows: 5, placeholder: "Enter comment..." %>
+      <%= f.text_area :text, class: "well textEntry", rows: 5, placeholder: "Enter comment..." %>
       <!-- </div> -->
     </div>
 

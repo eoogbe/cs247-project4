@@ -1,5 +1,7 @@
 <%= render "shared/main_nav", back_path: students_path, title: "New Participant" %>
 
+<h2 class="center">Enter New Student</h2>
+
 <main class="container" role="main">
   <%= form_for student, html: { class: "new_student form-horizontal" } do |f| %>
     <div class="form-group">

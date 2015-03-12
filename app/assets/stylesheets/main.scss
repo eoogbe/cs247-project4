@@ -1,7 +1,8 @@
 // Variables
 $bg-colour: #FEFEFE;
-$nav-bg-colour: #84d4fa;
-$nav-colour: #3e9ad2;
+$lighter-blue: #84d4fa;
+$darker-blue: #3e9ad2;
+$light-purple: #b78cba;
 
 //main.scss
 .textEntry{
@@ -9,7 +10,7 @@ $nav-colour: #3e9ad2;
 }
 
 .moodsSectionTitle{
-  font-size: 14px;
+    font-size: 14px;
     color: #777777;
     margin: 25px 5px 20px 40px;
     text-align: center;
@@ -27,26 +28,24 @@ $nav-colour: #3e9ad2;
 }
 
 .moodsNumeric, .moodsVisualization, .moodsSectionTitle{
-        display: inline-block;
-        float:left;
-
+    display: inline-block;
+    float:left;
 }
 .moodsVisualization, .moodsSectionTitle{
     float:left;
 }
+
 .radioButton{
     padding-right: 10px;
 }
+
 #sortDropdown{
     float:right;
 }
 #boundingBox, .mainStudentContent{
     margin: 10px 15px;
 }
-.cardTitle{
-    font-size: 20px;
-    color: #337ab7;
-}
+
 .noteHeader{
     font-size: 12px;
     margin-bottom: -10px;
@@ -60,31 +59,43 @@ $nav-colour: #3e9ad2;
     padding: 0px 5px;
 }
 
-.mainCard{
-    margin: 10px 15px;
-}
-
 .card {
-    border: 1px solid #eee;
-    padding: 15px 15px 5px 15px;
-    background: white;
+    border: 1px solid transparent; 
+    padding: 30px;
     position: relative;
-    word-break: break-word;
 
-    .card-image {
-        padding: 20px;
-        margin: 5px;
-        background: url("pic_bg.png");
-        background-size: 100% 100%;
-        img {
-            border: transparent 1px solid;
-            border-radius: 100px;
-            height: 100px;
-            width: 100px;
+    background: url("pic_bg.png");
+    background-size: 100% 100%;
+
+    max-width: 45%;
+    float: left;
+
+    word-break: break-word;
+    text-align: center;
+
+    .card-info {
+        text-align: center;
+        margin: auto;
+
+        .card-image {
+        text-align: center;
+            img {
+                margin: auto;
+                height: 100px;
+                width: 100px;
+                border: 1px solid transparent;
+                border-radius: 100px;
+            }
         }
     }
     
+    
 }
+.cardTitle{
+    font-size: 20px;
+    color: $darker-blue; /* #337ab7; */
+}
+
 .subhead{
     color: #555;
     font-size: 1em;
@@ -103,20 +114,38 @@ $nav-colour: #3e9ad2;
     width: 100%;
 }
 
-navbar > .container-fluid{
-   background-color: $nav-bg-colour;
-} 
+.navbar-header, .navbar-header.navbar-toggle {
+
+}
 
 .navbar-default{
-    background-color: $nav-bg-colour;
-    > .navbar-brand{
+    background: url("nav_bg_warm.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: $darker-blue 1px solid;
+
+    .navbar-brand{
         color: white;
-        text-shadow: 2px 2px #000000;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
     }
 }
 
 .navbar-default .navbar-brand{
     color: white;
+}
+
+.nav-tabs {
+    & > li {
+        &.active {
+            & > a {
+                
+            }
+        }
+        a {
+            border: 1px white solid;
+            border-radius-top: 5px;
+        }
+    }
 }
 
 #main-nav {
@@ -139,7 +168,7 @@ navbar > .container-fluid{
     border: 3px solid #333;
     > input,
     > .input-group-addon {
-        background-color: #AEC1D7;
+        background-color: $lighter-blue; /* #AEC1D7; */
         border: 0;
         border-radius: 0;
     }

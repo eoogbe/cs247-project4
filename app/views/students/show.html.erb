@@ -1,32 +1,22 @@
 <%= render "shared/main_nav", back_path: students_path, title: "Participant Profile" %>
 
 <main class="container" role="main">
-  <section class="media well card mainCard">
-    <div class="media-left card-image">
-      <%= image_tag student.image, height: 90, class: "media-object" %>
-    </div>
-    <div class="media-body">
-      <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
-      <p>Age <%= student.age %></p>
-      <p>Joined program: <%= student.joined_at.strftime("%B %Y") %></p>
-    </div>
-    <div class="media-right">
-      <div class="btn btn-default">
-       <span class="subhead"> <%= link_to "New Note", new_student_note_path(student) %></span>
-      </div>
+  <section class="media well card">
+    <div class="card-image">
+      <%= image_tag student.image, height: "50%", class: "media-object" %>
     </div>
   </section>
-
-  <div class="mainStudentContent">
-  </div>
-  <% if student.notes.exists? %>
-    <div class="mainStudentContent">
-      <hr/>
-      <section>
-        <div class="moodsDiv">
-          <div class="moodsSectionTitle">
-            <span> Mood Breakdown <br/> by Number of <br/> Interactions </span>
-          </div>
+  <section class="media">
+    <div class="media-left">
+      <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
+      <p>Age <%= student.age %></p>
+      <p>Joined: <%= student.joined_at.strftime("%B %Y") %></p>
+      <div class="btn btn-default">
+       <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
+      </div>
+    </div>
+    <div class="media-right moodsDiv">
+      <h2 class="media-heading"><span class="cardTitle">Mood Summary</span></h2>
           <% if student.notes.has_emotion_moods? %>
             <div class="moodsVisualization">
               <% Note.emotion_moods.each do |mood| %>
@@ -43,9 +33,11 @@
             <p>No moods recorded</p>
           <% end %>
         </div>
-      </section>
-    </div>
+  </section>
 
+  <div class="mainStudentContent">
+  </div>
+  <% if student.notes.exists? %>
     <hr/>
     <div class="mainStudentContent">
       <div class="dropdown pull-right" id="sortDropdown">

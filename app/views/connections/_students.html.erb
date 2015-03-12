@@ -11,15 +11,16 @@
     </div>
   </section> -->
   <!-- <hr> -->
-    <h2 class="center"><%= page_title %></h1>
+  <h3 class="center"><%= page_title %></h3>
   <hr>
 
   <div>
     <ul class="list-unstyled">
       <% students.each do |student| %>
       <li>
-        <section class="media well card mainCard">
-          <div class="media-left card-image">
+        <section class="media well card">
+          <div class="card-info">
+          <div class="card-image">
             <% if show_link %>
               <%= link_to student do %>
                 <%= image_tag student.image, height: 90, class: "media-object" %>
@@ -39,13 +40,13 @@
               </span>
             </h2>
   
-            <p>Age <%= student.age %></p>
-            <p>Program participant since <%= student.joined_at.strftime('%B %Y') %></p>
+            <p>Age: <%= student.age %> years old</p>
+            <p>Joined: <%= student.joined_at.strftime('%B %Y') %></p>
           </div>
-          <div class="media-right">
+          <div class="">
             <%= render student_action, student: student %>
           </div>
-  
+          </div>
         </section>
       </li>
       <% end %>

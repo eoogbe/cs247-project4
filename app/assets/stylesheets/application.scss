@@ -25,8 +25,9 @@
 
 // Variables
 $bg-colour: #FEFEFE;
-$nav-bg-colour: #84d4fa;
-$nav-colour: #3e9ad2;
+$lighter-blue: #84d4fa;
+$darker-blue: #3e9ad2;
+$light-purple: #b78cba;
 
 // General CSS
 html {
@@ -65,7 +66,22 @@ input, button {
 }
 
 .btn{
-	border: 1px solid #898C93;
+	border: 1px solid $darker-blue; /* #898C93; */
+    color: $darker-blue;
+    background: $lighter-blue;
+    text-shadow: 0 2px 3px rgba(255,255,255,0.8);
+    .subhead > a {
+        color: $darker-blue;
+    }
+    :hover .subhead > a{
+        color: $darker-blue;
+    }
+}
+
+.btn, .btn default {
+    &.active {
+        color: $darker-blue;
+    }
 }
 
 #note-category-tablist {
