@@ -7,6 +7,8 @@ class Note < ActiveRecord::Base
   
   belongs_to :student
   belongs_to :user
+  has_many :comments
+
   
   validates_presence_of :category, :privacy_status, :resolution, :importance,
     :mood, :student, :user

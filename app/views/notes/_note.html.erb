@@ -9,5 +9,17 @@
   <p>
   </p>
   <p><%= note.text %></p>
-  <p><%= button_to "mark resolved", status_note_path(note), method: :put, form_class: "clearfix", class: "btn-link pull-right" %></p>
+
+<%if note.comments().empty? %>
+          <p> There are no comments for this note </p>
+<%else %>
+    <% for comment in note.comments() %>
+        <%= comment.text %> - <%= comment.author_name %>
+    <%end%>
+<% end %>
+
+  <p>
+    <%= button_to "mark resolved", status_note_path(note), method: :put, form_class: "clearfix", class: "btn-link pull-right" %>
+    <%= link_to "Add Comment", new_note_comment_path(note.id) %>
+  </p>
 </li>

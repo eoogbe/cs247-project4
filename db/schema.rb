@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20150309014512) do
   add_index "notes", ["student_id"], name: "index_notes_on_student_id"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
+
+
+ create_table "comments", force: true do |t|
+    t.integer   "user_id"
+    t.string   "student_id"
+    t.string   "note_id"
+    t.text  "text"
+  end
+
+  # add_index "comments", ["note_id"], name: "index_comments_on_note_id"
+
   create_table "students", force: true do |t|
     t.string   "given_name"
     t.string   "surname"
@@ -38,6 +49,8 @@ ActiveRecord::Schema.define(version: 20150309014512) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+
 
   create_table "students_users", id: false, force: true do |t|
     t.integer "student_id"
