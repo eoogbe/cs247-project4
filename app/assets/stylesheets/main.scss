@@ -26,7 +26,6 @@ $light-purple: #b78cba;
     }
 }
 
-
 /*
 .moodsNumeric, .moodsVisualization{
     margin-left:40px;
@@ -92,8 +91,13 @@ $light-purple: #b78cba;
     /* background: url("pic_bg.png");
     background-size: 100% 100%; */
 
+    /*
     background: linear-gradient(to bottom, #f9cd22 0%,#ff9f08 50%);
-    background-image: linear-gradient(rgb(249, 205, 34) 0%, rgb(255, 159, 8) 100%);
+    background-image: linear-gradient(rgba(249, 205, 34, 0.5) 0%, rgba(255, 159, 8, 0.5) 100%);
+    */
+
+    background: linear-gradient(to bottom, #ffec9b 0%,#f9cd22 50%);
+    background-image: linear-gradient(rgba(255, 236, 155, 0.5) 0%, rgba(249, 205, 34, 0.5) 100%);
     box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
 
     word-break: break-word;
@@ -123,10 +127,10 @@ $light-purple: #b78cba;
 }
 
 .profile .card-image img{
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
     border: 1px solid transparent;
-    border-radius: 250px;
+    border-radius: 150px;
 }
 
 .subhead{
