@@ -19,5 +19,5 @@ class User < ActiveRecord::Base
     
     last_view.created_at > last_note.created_at
   end
-
+  
 end
