@@ -2,7 +2,7 @@ module ApplicationHelper
   def logout_link
     link_to 'Logout', destroy_user_session_path, method: :delete,
       form_class: "clearfix", form: { id: "logout-link" },
-      class: "btn-link pull-left"
+      class: "btn-link full-width"
   end
   
   def url_with_query url, query = nil

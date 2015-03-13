@@ -70,6 +70,10 @@ body {
     vertical-align: middle;
 }
 
+.full-width {
+    width: 100%;
+}
+
 input, button {
 	border-radius: 10px;
 	padding: 5px;
@@ -81,7 +85,7 @@ input, button {
     font-weight: 400;
 }
 
-.btn{
+.btn {
 	border: 1px solid $darker-blue; /* #898C93; */
     color: $darker-blue;
     background: $lighter-blue;
