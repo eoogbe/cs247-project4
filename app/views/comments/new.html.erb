@@ -1,0 +1,25 @@
+<%= render "shared/main_nav" %>
+
+<main class="container" role="main">
+  <!-- Student Specific Data -->
+  <section class="media well card">
+
+<h1> You are making a comment on the note: </h1>
+<%= note.text %>
+
+<div id="headTwo"> Enter your comments below </div> <br/>
+
+<%= form_for [note, comment] do |f| %>
+
+	<div> <%= f.text_area :text, cols: 30, rows: 5 %> </div>
+	<div> <%= f.submit "Submit Comment", class: "btn" %> </div>
+
+<% end %>
+  
+  </section>
+
+
+
+
+  </div>
+</main>

@@ -81,9 +81,9 @@
       <% end %>
     </fieldset>
     <div class="form-group">
-      <%#= check_box_tag :private, "1", note.private_? %>
-      <%#= label_tag :private %>
-      <div class="btn-group" data-toggle="buttons">
+      <%= check_box_tag :private, "1", note.private_? %>
+      <%= label_tag :private %>
+      <!-- <div class="btn-group" data-toggle="buttons">
         <%= f.label :privacy_status_private, class: "btn btn-default #{note.private_? ? "active" : ""}" do %>
           <%= f.radio_button :privacy_status, "1", required: true %>
           Private
@@ -92,7 +92,7 @@
           <%= f.radio_button :privacy_status, "0", required: true %>
           Public
         <% end %>
-      </div>
+      </div> -->
     </div>
     <fieldset>
       <legend>How important?</legend>
@@ -145,7 +145,15 @@
     <!-- <hr/> -->
     <div class="form-group">
       <legend>
-      <%= f.label :text, "Additional Information/Explanation" , id: "expText" %>
+      <%= f.label :location, "Location" , id: "expText" %>
+      </legend>
+      <!-- <div class="well card"> -->
+      <%= f.text_field :location, class: "well" %>
+      <!-- </div> -->
+    </div>
+    <div class="form-group">
+      <legend>
+      <%= f.label :text, "Please Provide Background/Context" , id: "expText" %>
       </legend>
       <!-- <div class="well card"> -->
       <%= f.text_area :text, class: "well textEntry", rows: 5, placeholder: "Enter comment..." %>

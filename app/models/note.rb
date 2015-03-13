@@ -7,6 +7,8 @@ class Note < ActiveRecord::Base
   
   belongs_to :student
   belongs_to :user
+  has_many :comments
+
   
   validates_presence_of :category, :privacy_status, :resolution, :importance,
     :mood, :student, :user
@@ -49,6 +51,10 @@ class Note < ActiveRecord::Base
   
   def self.has_text?
     with_text.exists?
+  end
+  
+  def self.most_recent
+    order(:created_at).last
   end
   
   def author_name

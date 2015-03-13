@@ -17,10 +17,6 @@
     }
 }
 
-.note {
-    background: rgba(255, 255, 255, 0.5);
-}
-
 .importanceBtn{
     color: #777;
     font-size: 13px;
@@ -64,12 +60,49 @@ legend{
 }
 
 .note {
-    padding: 5px 7px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px transparent solid;
+    border-radius: 5px;
 }
 
 .comment {
-    padding: 0px;
-    margin-left: 10px;
+    padding: 5px;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    p {
+        margin-left: 5px;
+    }
+    .noteHeader {
+
+    }
+}
+
+.noteHeader{
+    font-size: 12px;
+    margin: -11px;
+    padding: 5px 5px 5px 10px;
+
+    background: linear-gradient(to bottom, #bf90c2 0%,#ab78ae 50%);
+    background-image: linear-gradient(rgba(191, 144, 252, 0.5) 0%, rgba(171, 120, 174, 0.5) 100%);
+
+    box-shadow: 0px -1px 1px rgba(171, 120, 200,0.5);
+
+    border: 1px transparent solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.noteHeaderItem-left, .noteHeaderItem-middle{
+    border-right: 1px solid #333; 
+}
+
+.noteHeaderItem-middle, .noteHeaderItem-right{   
+    padding: 0px 5px;
+}
+
+.note-text {
+    padding: 0px 5px;
 }
 
 /* lines A, B, and C are voodoo to make the mood images line up with the N/A text.

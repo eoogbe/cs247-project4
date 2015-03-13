@@ -11,8 +11,13 @@ Rails.application.routes.draw do
   
   resources :notes, only: [] do
     put :status, on: :member
+    resources :comments
   end
   
+  # resources :comments, only: [] do
+
+  # end
+
   resources :connections, only: [:index, :new] do
     get :delete, on: :collection
   end

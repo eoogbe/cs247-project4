@@ -46,25 +46,12 @@ $light-purple: #b78cba;
 .radioButton{
     padding-right: 10px;
 }
-
+/*
 #sortDropdown{
     float:right;
-}
+}*/
 #boundingBox, .mainStudentContent{
     margin: 10px 15px;
-}
-
-.noteHeader{
-    font-size: 12px;
-    margin-bottom: -10px;
-
-}
-.noteHeaderItem-left, .noteHeaderItem-middle{
-    border-right: 1px solid #333; 
-}
-
-.noteHeaderItem-middle, .noteHeaderItem-right{   
-    padding: 0px 5px;
 }
 
 .card_container {
@@ -87,6 +74,7 @@ $light-purple: #b78cba;
     padding: 10px;
     margin: 5px;
     position: relative;
+
 
     /* background: url("pic_bg.png");
     background-size: 100% 100%; */
@@ -121,6 +109,13 @@ $light-purple: #b78cba;
     
     
 }
+
+.card-red {
+    background: linear-gradient(to bottom, #cfb0b5 0%,#b58181 50%);
+    background-image: linear-gradient(rgba(255, 176, 181, 0.8) 0%, rgba(255, 129, 129, 0.8) 100%);
+    border: 1px solid rgb(255, 100, 100);
+}
+
 .cardTitle{
     font-size: 20px;
     color: $darker-blue; /* #337ab7; */
@@ -181,6 +176,7 @@ $light-purple: #b78cba;
         a {
             border: 1px white solid;
             border-radius-top: 5px;
+            padding: 10px 30px;
         }
     }
 }
