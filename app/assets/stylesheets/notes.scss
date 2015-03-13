@@ -67,6 +67,11 @@ legend{
     padding: 5px 7px 0;
 }
 
+.comment {
+    padding: 0px;
+    margin-left: 10px;
+}
+
 /* lines A, B, and C are voodoo to make the mood images line up with the N/A text.
  * (Perhaps we should consider just making N/A an equally sized image.)
  * Ideas were stolen from here: http://stackoverflow.com/a/2744005/830988

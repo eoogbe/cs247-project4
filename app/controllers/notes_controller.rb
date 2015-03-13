@@ -10,6 +10,7 @@ class NotesController < ApplicationController
       n.user = current_user
       n.resolution = :unresolved
       n.privacy_status = params[:private] ? :private_ : :public_
+      #params[:private] ? :private_ : :public_
     end
     
     if note.save
