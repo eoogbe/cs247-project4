@@ -32,6 +32,6 @@ en:
   helpers:
     submit:
       student:
-        create: Add a Participant
+        create: Add a New Student
       note:
         create: Save Note
