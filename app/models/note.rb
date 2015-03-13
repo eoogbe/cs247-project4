@@ -53,6 +53,10 @@ class Note < ActiveRecord::Base
     with_text.exists?
   end
   
+  def self.most_recent
+    order(:created_at).last
+  end
+  
   def author_name
     user.name
   end

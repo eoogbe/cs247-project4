@@ -49,18 +49,6 @@
   <% if student.notes.exists? %>
     <hr/>
     <div class="mainStudentContent">
-      <div class="dropdown pull-right" id="sortDropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-          Order By: <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" role="menu">
-          <li><%= link_to "Importance: High to Low", url_with_query(sort_attr: :importance, sort_order: :desc) %></li>
-          <li><%= link_to "Importance: Low to High", url_with_query(sort_attr: :importance, sort_order: :asc) %></li>
-          <li><%= link_to "Date: Recent to Oldest", url_with_query(sort_attr: :created_at, sort_order: :desc) %></li>
-          <li><%= link_to "Date: Oldest to Recent", url_with_query(sort_attr: :created_at, sort_order: :asc) %></li>
-          <li><%= link_to "Creator: Alphabetical", url_with_query(sort_by_creator: :true) %></li>
-        </ul>
-      </div>
       <ul class="nav nav-tabs">
         <li role="presentation" class="active">
             <a href="#public" aria-controls="public" role="tab" data-toggle="tab">Public</a>

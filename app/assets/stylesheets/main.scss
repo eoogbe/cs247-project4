@@ -46,10 +46,10 @@ $light-purple: #b78cba;
 .radioButton{
     padding-right: 10px;
 }
-
+/*
 #sortDropdown{
     float:right;
-}
+}*/
 #boundingBox, .mainStudentContent{
     margin: 10px 15px;
 }
@@ -122,6 +122,11 @@ $light-purple: #b78cba;
     
     
 }
+
+.card-red {
+    background: #f00;
+}
+
 .cardTitle{
     font-size: 20px;
     color: $darker-blue; /* #337ab7; */

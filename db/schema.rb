@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313073645) do
+ActiveRecord::Schema.define(version: 20150313081632) do
 
   create_table "comments", force: true do |t|
     t.integer "user_id"
@@ -74,5 +74,15 @@ ActiveRecord::Schema.define(version: 20150313073645) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "views", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "views", ["student_id"], name: "index_views_on_student_id"
+  add_index "views", ["user_id"], name: "index_views_on_user_id"
 
 end

@@ -1,16 +1,5 @@
 <%= render "shared/main_nav" %>
 <main class="container" role="main">
-  <!-- <section class="btn-group-sm" role="group">
-    <h1 class="subhead col-xs-3">Sort By:</h1>
-    <div class="col-xs-9">
-    <% sort_categories.each do |text, attr| %>
-      <button type="button" class="btn btn-default">
-        <span class="subhead"> <%= link_to text, url_with_query(sort: attr) %></span>
-      </button>
-    <% end %>
-    </div>
-  </section> -->
-  <!-- <hr> -->
   <h4 class="center"><%= page_title %></h4>
   <hr>
 
@@ -18,7 +7,7 @@
     <ul class="list-unstyled">
       <% students.each do |student| %>
       <li class="col-md-4 col-sm-6">
-        <section class="media well card">
+        <section class="media well card <%= "card-red" unless current_user.has_viewed?(student) %>">
           <div class="card-info">
           <div class="card-image">
             <% if show_link %>
