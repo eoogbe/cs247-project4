@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 20150313073645) do
   add_index "comments", ["note_id"], name: "index_comments_on_note_id"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
-  create_table "comments", force: true do |t|
-    t.integer "user_id"
-    t.integer "note_id"
-    t.text    "text"
-  end
-
-  add_index "comments", ["note_id"], name: "index_comments_on_note_id"
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
-
   create_table "notes", force: true do |t|
     t.integer  "user_id"
     t.integer  "student_id"
