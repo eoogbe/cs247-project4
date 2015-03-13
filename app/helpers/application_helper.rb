@@ -1,6 +1,6 @@
 module ApplicationHelper
   def logout_link
-    button_to 'Logout', destroy_user_session_path, method: :delete,
+    link_to 'Logout', destroy_user_session_path, method: :delete,
       form_class: "clearfix", form: { id: "logout-link" },
       class: "btn-link pull-left"
   end
