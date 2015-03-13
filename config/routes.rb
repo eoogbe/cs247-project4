@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   
   resources :notes, only: [] do
     put :status, on: :member
-    resources :comments
   end
   
   # resources :comments, only: [] do
