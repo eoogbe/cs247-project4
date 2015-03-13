@@ -1,0 +1,55 @@
+// Variables
+$bg-colour: #FEFEFE;
+$lighter-blue: #84d4fa;
+$darker-blue: #3e9ad2;
+$light-purple: #b78cba;
+
+/*#sort-container {
+    font-family: serif;
+    > h2 {
+        font-size: 18px;
+        margin: 0;
+    }
+    > h2,
+    a {
+        color: #fff;
+    }
+}
+*/
+.student {
+    padding: 7px 10px;
+    margin-bottom: 5px;
+    > .media-left > a {
+        width: 200px;
+        display: inline-block;
+    }
+    a,
+    p {
+        color: #000011;
+    }
+    p {
+        margin: 0;
+    }
+
+}
+
+.student-blue {
+    background-color: #AEC1D7;
+}
+
+.student-gray {
+    background-color: #898C93;
+}
+
+.studentTitle{
+   color: #337ab7;
+}
+
+.new_student {
+    .control-label {
+        color: #777777;
+    }
+    .form-control {
+        border-radius: 0;
+    }
+}

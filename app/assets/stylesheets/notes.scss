@@ -1,0 +1,181 @@
+#note-category-tablist {
+    border: 0;
+    margin: 10px 15px;
+  /*  font-size: 18px; */
+    > li {
+        width: 50%;
+        > a {
+            margin: 0;
+            color: #000011;
+            border: 3px solid #898C93;
+            border-radius: 0;
+        }
+    }
+    > .active > a {
+        background-color: #898C93;
+        font-weight: bold;
+    }
+}
+
+.note {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.importanceBtn{
+    color: #777;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.expText{
+    margin-bottom: -10px;
+}
+legend{
+    font-size: 16px;
+    color: #777;
+    margin-top: 20px;
+}
+#note-category-tabcontent {
+    margin-top: 5px;
+    padding-left: 0;
+}
+
+#note-category-fieldset {
+    font-size: 18px;
+    > input[type="radio"] {
+        display: none;
+        &:checked + label {
+            background-color: #898C93;
+            font-weight: bold;
+        }
+        &:focus + label {
+            background-color: #fff;
+        }
+    }
+    > label {
+        width: 50%;
+        padding: 10px 15px;
+        border: 3px solid #898C93;
+        font-weight: normal;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+.note {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px transparent solid;
+    border-radius: 5px;
+}
+
+.comment {
+    padding: 5px;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    p {
+        margin-left: 5px;
+    }
+    .noteHeader {
+        margin: -5px;
+    }
+}
+
+@media (min-width: 960px) {
+    .comment {
+        margin: 5px;
+    }
+}
+
+.noteHeader{
+    font-size: 12px;
+    margin: -11px;
+    padding: 5px 5px 5px 10px;
+
+    background: linear-gradient(to bottom, #bf90c2 0%,#ab78ae 50%);
+    background-image: linear-gradient(rgba(191, 144, 252, 0.5) 0%, rgba(171, 120, 174, 0.5) 100%);
+
+    box-shadow: 0px -1px 1px rgba(171, 120, 200,0.5);
+
+    border: 1px transparent solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.noteHeaderItem-left, .noteHeaderItem-middle{
+    border-right: 1px solid #333; 
+}
+
+.noteHeaderItem-middle, .noteHeaderItem-right{   
+    padding: 0px 5px;
+}
+
+.note-text {
+    padding: 0px 5px;
+}
+
+/* lines A, B, and C are voodoo to make the mood images line up with the N/A text.
+ * (Perhaps we should consider just making N/A an equally sized image.)
+ * Ideas were stolen from here: http://stackoverflow.com/a/2744005/830988
+ */
+
+#mood-fieldset > div {
+    height: 60px; /* A */
+    > label {
+        line-height: 60px; /* B */
+    }
+}
+
+.mood-radio:checked + label {
+    border: 3px solid #898C93;
+}
+
+.mood-img {
+    vertical-align: top; /* C */
+    > img {
+        margin: 0 5px;
+        height: 50px;
+        width: 50px;
+    }
+}
+
+#note_mood_na-label {
+    padding: 0 10px;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+#note_location {
+    display: inline-block;
+    width: 50%;
+}
+
+.mood-label {
+    width: 60px;
+    height: 60px;
+}
+
+@media (min-width: 960px) {
+    .mood-label {
+        width: 75px;
+        height: 75px;
+    }
+    
+    #mood-fieldset > div {
+        height: 75px; /* A */
+        > label {
+            line-height: 75px; /* B */
+        }
+    }
+    
+    .mood-img > img {
+        margin: 0 10px;
+        height: 60px;
+        width: 60px;
+    }
+    
+    #note_mood_na-label {
+        font-size: 30px;
+    }
+}
