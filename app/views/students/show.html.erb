@@ -1,9 +1,12 @@
 <%= render "shared/main_nav", back_path: students_path, title: "Participant Profile" %>
 
 <main class="container" role="main">
+  <!-- Profile Card -->
   <section class="media well card profile">
     <div class="media-left card-image">
-      <%= image_tag student.image, class: "media-object" %>
+      <%= link_to student do %>
+        <%= image_tag student.image, class: "media-object" %>
+      <% end %>
     </div>
     <div class="media-right align-vert-center">
       <div class="media-body align-left">
