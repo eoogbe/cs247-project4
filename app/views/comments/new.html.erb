@@ -4,14 +4,14 @@
   <!-- Student Specific Data -->
   <section class="media well card">
 
-<h1> You are making a comment on the note: </h1>
-<%= note.text %>
-
-<div id="headTwo"> Enter your comments below </div> <br/>
+<h1> Comment on a Note </h1>
+Original Note:
+<p><%= note.text %></p>
+ <br/>
 
 <%= form_for [note, comment] do |f| %>
 
-	<div> <%= f.text_area :text, cols: 30, rows: 5 %> </div>
+	<div> <%= f.text_area :text, cols: 30, rows: 5, class: "well textEntry", placeholder: "Enter your comment..." %> </div>
 	<div> <%= f.submit "Submit Comment", class: "btn" %> </div>
 
 <% end %>

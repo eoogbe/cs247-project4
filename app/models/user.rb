@@ -8,16 +8,21 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :views
 
-  def has_viewed? student
+  def has_viewed?(student)
     return true if !students.include?(student)
     
-    last_note = student.notes.most_recent
+    last_note = student.public_notes.most_recent
     return true if last_note.nil?
+    puts "\nLAST NOTE : "
+    puts last_note.created_at
     
-    last_view = views.find_by(student: student)
+    last_view = views.order("created_at DESC").find_by(student_id: student.id) #views.find_by(student: student)
     return false if last_view.nil?
-    
+    puts "\nLAST VIEW : "
+    puts last_view.created_at
+
+    puts last_view.created_at > last_note.created_at
     last_view.created_at > last_note.created_at
   end
-  
+
 end

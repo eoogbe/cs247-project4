@@ -9,6 +9,8 @@
 # initial user
 user1 = User.new(:name => "test", :email => "test@user.com", :password => "test")
 user1.save(:validate => false)
+user2 = User.new(:name => "test2", :email => "test2@user.com", :password => "test2")
+user2.save(:validate => false)
 
 # initial fake kids
 kid1 = Student.new(:given_name => "Lillybeth", :surname => "Serrano", :image => "uploads/kid1.png", :age => 12, :joined_at => "2012-08-30 12:34:23")

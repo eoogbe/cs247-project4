@@ -7,7 +7,12 @@
     <ul class="list-unstyled">
       <% students.each do |student| %>
       <li class="col-md-4 col-sm-6">
-        <section class="media well card <%= "card-red" unless current_user.has_viewed?(student) %>">
+        <% if !current_user.has_viewed?(student) then %>
+          <% redcard = "" %>
+        <% else %>
+          <% redcard = "card-red" %>
+        <% end %>
+        <section class="media well card <%= 'card-red' unless current_user.has_viewed?(student) %>">
           <div class="card-info">
           <div class="card-image">
             <% if show_link %>
