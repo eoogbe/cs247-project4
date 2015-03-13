@@ -1,38 +1,44 @@
 <%= render "shared/main_nav", back_path: students_path, title: "Participant Profile" %>
 
 <main class="container" role="main">
-  <section class="media well card">
-    <div class="card-image">
-      <%= image_tag student.image, height: "50%", class: "media-object" %>
+  <section class="media well card profile">
+    <div class="media-left card-image">
+      <%= image_tag student.image, class: "media-object" %>
     </div>
-  </section>
-  <section class="media">
-    <div class="media-left">
-      <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
-      <p>Age <%= student.age %></p>
-      <p>Joined: <%= student.joined_at.strftime("%B %Y") %></p>
-      <div class="btn btn-default">
-       <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
+    <div class="media-right align-vert-center">
+      <div class="media-body align-left">
+        <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
+        <p>Age <%= student.age %></p>
+        <p>Joined: <%= student.joined_at.strftime("%B %Y") %></p>
+        <div class="btn btn-default">
+         <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
+        </div>
       </div>
-    </div>
-    <div class="media-right moodsDiv">
-      <h2 class="media-heading"><span class="cardTitle">Mood Summary</span></h2>
+      <div class="media-right center">
+        <!-- <h2 class="media-heading"><span class="cardTitle">Mood Summary</span></h2> -->
+        <div class="moodsDiv">
           <% if student.notes.has_emotion_moods? %>
             <div class="moodsVisualization">
               <% Note.emotion_moods.each do |mood| %>
-                <%= mood_percent_image(mood, student.notes) %>
+                <% if student.notes.send("#{mood}_mood_count") != 0 %>
+                  <%= mood_percent_image(mood, student.notes) %>
+                  <%#= student.notes.send("#{mood}_mood_count") %>
+                <br />
+                <% end %>
               <% end %>
             </div>
-            <div class="moodsNumeric">
+            <!-- <div class="moodsNumeric">
               <% Note.emotion_moods.each do |mood| %>
-              <%= t(mood, scope: [:activerecord, :attributes, :note, :moods]) %>:
-              <%= student.notes.send("#{mood}_mood_count") %> <br/>
+                <%= t(mood, scope: [:activerecord, :attributes, :note, :moods]) %>:
+                <%= student.notes.send("#{mood}_mood_count") %> <br/>
               <% end %>
-            </div>
+            </div> -->
           <% else %>
-            <p>No moods recorded</p>
+            <!-- <p>No moods recorded</p> -->
           <% end %>
         </div>
+      </div>
+    </div>
   </section>
 
   <div class="mainStudentContent">

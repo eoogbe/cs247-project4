@@ -54,6 +54,22 @@ body {
 	text-align: center;
 }
 
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.float-right {
+    float: right;
+}
+
+.align-vert-center {
+    vertical-align: middle;
+}
+
 input, button {
 	border-radius: 10px;
 	padding: 5px;
@@ -97,6 +113,9 @@ label{
 }
 
 @media (max-width: 1400px) {
+    .navbar {
+        margin: 0px;
+    }
     .navbar-header {
         float: none;
     }
