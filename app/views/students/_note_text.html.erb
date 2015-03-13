@@ -14,7 +14,7 @@
           <p> There are no comments for this note </p>
 <%else %>
     <% for comment in note.comments() %>
-        <%= comment.text %> - <%= note.user_id %>
+        <%= comment.text %> - <%= note.user_id %> <br/>
     <%end%>
 <% end %>
 
