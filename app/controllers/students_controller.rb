@@ -8,14 +8,14 @@ class StudentsController < ApplicationController
       s.image = upload(params[:student][:image]) if params[:student][:image]
     end
     
-    redirect_to students_path
+    redirect_to connections_path
   end
   
   def show
     self.student = Student.find(params[:id])
     self.public_notes = student.public_notes.with_text
     self.private_notes = student.private_notes(user: current_user).with_text
-    current_view = student.views.create!(user: current_user)
+    student.views.create!(user: current_user)
   end
   
   def add

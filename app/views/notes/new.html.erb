@@ -83,16 +83,10 @@
     <div class="form-group">
       <%= check_box_tag :private, "1", note.private_? %>
       <%= label_tag :private %>
-      <!-- <div class="btn-group" data-toggle="buttons">
-        <%= f.label :privacy_status_private, class: "btn btn-default #{note.private_? ? "active" : ""}" do %>
-          <%= f.radio_button :privacy_status, "1", required: true %>
-          Private
-        <% end %>
-        <%= f.label :privacy_status_public, class: "btn btn-default #{note.public_? ? "active" : ""}" do %>
-          <%= f.radio_button :privacy_status, "0", required: true %>
-          Public
-        <% end %>
-      </div> -->
+    </div>
+    <div class="form-group">
+      <%= f.label :location, "Location", class: "control-label" %>
+      <%= f.text_field :location, class: "form-control" %>
     </div>
     <fieldset>
       <legend>How important?</legend>
@@ -127,36 +121,28 @@
       <legend>Select <%= student.given_name %>'s emotional state</legend>
       <div>
         <%= f.radio_button :mood, :good, class: "sr-only mood-radio", required: true %>
-        <%= f.label :mood_good, class: "mood-img" do %>
-          <%= image_tag "mood_good_trans.png", alt: "Happy", size: "75x75" %>
+        <%= f.label :mood_good, class: "mood-img mood-label" do %>
+          <%= image_tag "mood_good_trans.png", alt: "Happy" %>
         <% end %>
         <%= f.radio_button :mood, :neutral, class: "sr-only mood-radio", required: true %>
-        <%= f.label :mood_neutral, class: "mood-img" do %>
-          <%= image_tag "mood_neutral_trans.png", alt: "Neutral", size: "75x75" %>
+        <%= f.label :mood_neutral, class: "mood-img mood-label" do %>
+          <%= image_tag "mood_neutral_trans.png", alt: "Neutral" %>
         <% end %>
         <%= f.radio_button :mood, :bad, class: "sr-only mood-radio", required: true %>
-        <%= f.label :mood_bad, class: "mood-img" do %>
-          <%= image_tag "mood_bad_trans.png", alt: "Sad", size: "75x75" %>
+        <%= f.label :mood_bad, class: "mood-img mood-label" do %>
+          <%= image_tag "mood_bad_trans.png", alt: "Sad" %>
         <% end %>
         <%= f.radio_button :mood, :na, class: "sr-only mood-radio", required: true %>
-        <%= f.label :mood_na, "N/A", id: "note_mood_na-label" %>
+        <%= f.label :mood_na, "N/A", class: "mood-label", id: "note_mood_na-label" %>
       </div>
     </fieldset>
     <!-- <hr/> -->
     <div class="form-group">
       <legend>
-      <%= f.label :location, "Location" , id: "expText" %>
+      <%= f.label :text, "Please Provide Background/Context" , class: "expText" %>
       </legend>
       <!-- <div class="well card"> -->
-      <%= f.text_field :location, class: "well" %>
-      <!-- </div> -->
-    </div>
-    <div class="form-group">
-      <legend>
-      <%= f.label :text, "Please Provide Background/Context" , id: "expText" %>
-      </legend>
-      <!-- <div class="well card"> -->
-      <%= f.text_area :text, class: "well textEntry", rows: 5, placeholder: "Enter comment..." %>
+      <%= f.text_area :text, class: "well textEntry", rows: 5 %>
       <!-- </div> -->
     </div>
 

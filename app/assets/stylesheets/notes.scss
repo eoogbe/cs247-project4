@@ -23,7 +23,7 @@
     font-weight: 400;
 }
 
-#expText{
+.expText{
     margin-bottom: -10px;
 }
 legend{
@@ -111,9 +111,9 @@ legend{
  */
 
 #mood-fieldset > div {
-    height: 90px; /* A */
+    height: 60px; /* A */
     > label {
-        line-height: 90px; /* B */
+        line-height: 60px; /* B */
     }
 }
 
@@ -124,15 +124,48 @@ legend{
 .mood-img {
     vertical-align: top; /* C */
     > img {
-        margin: 0 10px;
-        height: 65px;
-        width: 65px;
+        margin: 0 5px;
+        height: 50px;
+        width: 50px;
     }
-
 }
 
 #note_mood_na-label {
     padding: 0 10px;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 400;
+}
+
+#note_location {
+    display: inline-block;
+    width: 50%;
+}
+
+.mood-label {
+    width: 60px;
+    height: 60px;
+}
+
+@media (min-width: 960px) {
+    .mood-label {
+        width: 75px;
+        height: 75px;
+    }
+    
+    #mood-fieldset > div {
+        height: 75px; /* A */
+        > label {
+            line-height: 75px; /* B */
+        }
+    }
+    
+    .mood-img > img {
+        margin: 0 10px;
+        height: 60px;
+        width: 60px;
+    }
+    
+    #note_mood_na-label {
+        font-size: 30px;
+    }
 }
