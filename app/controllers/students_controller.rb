@@ -13,8 +13,8 @@ class StudentsController < ApplicationController
   
   def show
     self.student = Student.find(params[:id])
-    self.public_notes = student.public_notes.with_text
-    self.private_notes = student.private_notes(user: current_user).with_text
+    self.public_notes = student.public_notes.with_text.order(created_at: :desc)
+    self.private_notes = student.private_notes(user: current_user).with_text.order(created_at: :desc)
     student.views.create!(user: current_user)
   end
   
