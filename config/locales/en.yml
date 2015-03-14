@@ -25,9 +25,9 @@ en:
       note:
         text: Note Text
         moods:
-          bad: Negative
+          bad: Sad
           neutral: Neutral
-          good: Positive
+          good: Happy
           na: N/A
   helpers:
     submit:

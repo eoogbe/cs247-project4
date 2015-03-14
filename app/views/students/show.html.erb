@@ -9,24 +9,18 @@
       <% end %>
     </div>
     <div class="media-right align-vert-center">
-      <div class="media-body align-left">
-        <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
-        <p>Age <%= student.age %></p>
-        <p>Joined: <%= student.joined_at.strftime("%B %Y") %></p>
-        <div class="btn btn-default">
-         <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
-        </div>
-      </div>
-      <div class="media-right center">
+      <div class="pull-right center">
         <!-- <h2 class="media-heading"><span class="cardTitle">Mood Summary</span></h2> -->
         <div class="moodsDiv">
           <% if student.notes.has_emotion_moods? %>
             <div class="moodsVisualization">
               <% Note.emotion_moods.each do |mood| %>
                 <% if student.notes.send("#{mood}_mood_count") != 0 %>
-                  <%= mood_percent_image(mood, student.notes) %>
-                  <%#= student.notes.send("#{mood}_mood_count") %>
-                <br />
+                  <div>
+                    <%= mood_percent_image(mood, student.notes) %>
+                    <%= t(mood, scope: [:activerecord, :attributes, :note, :moods]) %> Notes:
+                    <%= student.notes.send("#{mood}_mood_count") %>
+                  </div>
                 <% end %>
               <% end %>
             </div>
@@ -39,6 +33,14 @@
           <% else %>
             <!-- <p>No moods recorded</p> -->
           <% end %>
+        </div>
+      </div>
+      <div class="media-body align-left">
+        <h2 class="media-heading"><span class="cardTitle"><%= student.full_name %></span></h2>
+        <p>Age <%= student.age %></p>
+        <p>Joined: <%= student.joined_at.strftime("%B %Y") %></p>
+        <div class="btn btn-default">
+         <span class="subhead"> <%= link_to "+ New Note", new_student_note_path(student) %></span>
         </div>
       </div>
     </div>
